@@ -9,7 +9,7 @@ shuffle(ans)
 #print(ans)
 
 def guess():
-	user_in = list(input('huh? '))
+	user_in = list(input('guess: '))
 	
 	return user_in
 
@@ -45,7 +45,7 @@ attempts += 1
 
 while user_guess != ans:
 	user_guess.clear()
-	user_input = list(input('huh? '))
+	user_input = list(input('guess: '))
 	
 	for z in user_input:
 		user_guess.append(z)
