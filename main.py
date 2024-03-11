@@ -30,7 +30,7 @@ class Game:
 		"""
 		self.ans = [str(i) for i in range(1, 7)]
 		shuffle(self.ans)
-		print(self.ans)
+		#print(self.ans)
 		
 		
 		"""
@@ -155,7 +155,7 @@ def main():
 			- set a point system that adds 100 points every time the player correctly
 			  guesses a number
 			- continue_game command set as 'y' by default such that it does not
-			  satisfy the while condition so that it will keep running until the
+			  satisfy the condition of the while loop so that it will keep running until the
 			  player decides to stop playing and answer 'n', which terminates the
 			  game
 	"""
