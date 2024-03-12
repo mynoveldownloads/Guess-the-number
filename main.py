@@ -83,7 +83,7 @@ class Game:
 				  to check which digit was correctly guessed, but the position/
 				  index of the digit will not be shown
 		"""
-		if self.check(input_list) is True:
+		if self.check(input_list) == True:
 			for y in range(6):
 				if input_list[y] == ans[y]:
 					correct += 1
