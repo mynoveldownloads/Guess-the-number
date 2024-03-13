@@ -57,23 +57,53 @@ class Game:
 	
 			print(f'\nYou won! \nYour guess is {user_ans} \nGame answer is {game_ans} \nTotal attempts: {self.attempts}')
 
+
+class Loop:
+	
+	def __init__(self):
+		self.option = [self.game_option('y')]
+		
+	def game_option(self, option):
+		
+		match option:
+			case 'y':
+				return 'True'
+			case 'Y':
+				return 'True'
+			case 'n':
+				return 'False'
+			case 'N':
+				return 'False'
+			case other:
+				print('\nchoose y to continue the game or n to exit the game\n')
+				return 'other'
+				
+	def game_loop(self):
+		
+		while 'True' in self.option:
+			
+			self.option.clear()
+			Game()
+			
+			user_option = input('Would you like to continue? [y/n] ')
+			self.option.append(self.game_option(user_option))
+			
+			
+			while 'other' in self.option:
+				self.option.clear()
+				user_option2 = input('Would you like to continue? [y/n] ')
+				self.option.append(self.game_option(user_option2))
+			
+		else:
+			print('Game exited')
+
 def main():
 	
-	points = 0
-	continue_game = ['y']
+	print('Guess the number from 1 to 6')
 	
-	while 'n' not in continue_game:
-		
-		
-		Game()
-		points += 100
-		
-		print(f'\nYou now have {points} points')
-		continue_game.clear
-		ask_user = input('Would you like to continue? [y/n] ')
-		continue_game.append(ask_user)
+	game = Loop()
+	game.game_loop()
 	
-	print(f'\nGame exited. Thanks for playing! \nCredits: \n- Game idea and raw code by me (mynov) \n- OOP code assisted with ChatGPT')
-
+	
 if __name__ == '__main__':
 	main()
