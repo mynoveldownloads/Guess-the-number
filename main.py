@@ -62,6 +62,11 @@ class Loop:
 	
 	def __init__(self):
 		self.option = [self.game_option('y')]
+		self.points = 0
+		
+	def win(self):
+		self.points += 100
+		print(f'\nYou now have {self.points} points')
 		
 	def game_option(self, option):
 		
@@ -85,17 +90,21 @@ class Loop:
 			self.option.clear()
 			Game()
 			
+			self.win()
 			user_option = input('Would you like to continue? [y/n] ')
 			self.option.append(self.game_option(user_option))
 			
 			
 			while 'other' in self.option:
+				
 				self.option.clear()
 				user_option2 = input('Would you like to continue? [y/n] ')
 				self.option.append(self.game_option(user_option2))
 			
 		else:
 			print('Game exited')
+
+	
 
 def main():
 	
