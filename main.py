@@ -5,7 +5,7 @@ class Game:
 	def __init__(self):
 		self.ans = [str(i) for i in range(1, 7)]
 		shuffle(self.ans)
-		print(self.ans)
+		print(f'{self.ans} <- cheat answer')
 		
 		self.attempts = 0
 		self.start_game()
@@ -64,7 +64,7 @@ class Loop:
 		self.option = [self.game_option('y')]
 		self.points = 0
 		
-	def win(self):
+	def win_game(self):
 		self.points += 100
 		print(f'\nYou now have {self.points} points')
 		
@@ -90,7 +90,7 @@ class Loop:
 			self.option.clear()
 			Game()
 			
-			self.win()
+			self.win_game()
 			user_option = input('Would you like to continue? [y/n] ')
 			self.option.append(self.game_option(user_option))
 			
@@ -103,8 +103,6 @@ class Loop:
 			
 		else:
 			print('Game exited')
-
-	
 
 def main():
 	
