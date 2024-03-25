@@ -1,4 +1,4 @@
-from itertools import permutations
+from itertools import permutations # not needed atm, will be used for next bruteforce (in theory should not take not more than 720 attempts)
 from random import shuffle
 
 # very cpu intensive, might take up to 3000 attempts or more if unlucky and as little as 7 attempts
